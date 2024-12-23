@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt_Br">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Página Projeto  _ Pessoa</h1>     
+        
+    </header>
+
+    <main>
+        <p>Esta é uma página de exemplo em Django com cores azul e laranja.</p>
+        <button id="actionButton">Clique Aqui</button> 
+        <br>       
+        <h1> Tem Certeza  que  deseja  deletar a  {{ person.first_name }}?</h1> 
+                  
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}             
+            <button type="submit">Delete</button>
+        </form>
+         
+    </main>

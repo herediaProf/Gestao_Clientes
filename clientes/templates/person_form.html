@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt_Br">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Página Projeto  _ Pessoa</h1>     
+        
+    </header>
+
+    <main>
+        <p>Esta é uma página de exemplo em Django com cores azul e laranja.</p>
+        <button id="actionButton">Clique Aqui</button>        
+                   
+         <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form }}
+            <button type="submit">Salvar</button>
+        </form>
+         
+    </main>
+
+   
+    <img src="{% static "images/Hexagrama.jpg" %}" alt="images/"/>
+
+    
+
+    
+
+    <footer>
+        <p>© 2024 Minha Aplicação</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

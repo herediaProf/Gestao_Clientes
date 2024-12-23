@@ -32,7 +32,6 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com/']
 
-
 # Application definition
 
 INSTALLED_APPS = [

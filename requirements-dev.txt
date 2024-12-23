@@ -1,8 +1,0 @@
-dj-database-url
-dj-static
-Django
-Pillow
-psycopg2
-python-decouple
-pytz
-static

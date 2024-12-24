@@ -30,7 +30,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com', '127.0.0.1']
+#ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com', '127.0.0.1']
+
+
+ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com']
+
+
 
 # Application definition
 
@@ -79,8 +84,6 @@ WSGI_APPLICATION = "Gestao_Clientes.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-#DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=bool),}
 
 #DATABASES = {
 #    "default": {
@@ -97,7 +100,8 @@ WSGI_APPLICATION = "Gestao_Clientes.wsgi.application"
 
 # Configurar banco de dados do Heroku
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL')),
+    
 }
 
 

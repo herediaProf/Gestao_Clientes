@@ -13,40 +13,26 @@
         <h1>Bem-vindo à Página Projeto  _ Pessoa</h1>
         
     </header>
-    <main>
-        <p>Esta é uma página de exemplo em Django com cores azul e laranja.</p>
-        <button id="actionButton">Clique Aqui</button>
-      
-    </main>
+    <main>       
+        <div.class="container">  
+            <a href="{% url 'logout' %}">Sair</a>
+            <ul>
+                {% for person in persons %}
+                    <li>
+                        <a href="{% url 'persons_update' person.id %}">{{ person.first_name }}</a>
+                        <a href="{% url 'persons_delete' person.id %}">Deletar</a>
+                    </li>
+                {% endfor%}
+            </ul> <br>
 
-            <!-- Corrigido o bloco de lógica condicional -->
-        {% if v_idade > 0 %}
-            <p>A pessoa foi encontrada, ela tem {{ v_idade }} anos.</p>
-        {% else %}
-            <p>Pessoa não encontrada.</p>
-        {% endif %}
+            <a href={% url 'persons_new' %}>Novo Cliente</a>
+         </div>  
+    </main>
+        
+        <br>
+        <!-- - colocando imagem      -->
+        <img src="{% static "images/Hexagrama.jpg" %}" alt="images/"/>
     
-        <!--Link de Logout-->
-
-    <a href="{% url 'logout' %}">Sair</a>
-
-    <!--   -->
-
-    <ul>
-        {% for person in persons %}
-            <li>
-                <a href="{% url 'persons_update' person.id %}">{{ person.first_name }}</a>
-                <a href="{% url 'persons_delete' person.id %}">Deletar</a>
-            </li>
-        {% endfor%}
-    </ul>
-    <br>
-    <a href={% url 'persons_new' %}>Novo Cliente</a>
-    </main>
-    <br>
-    <!-- - colocando imagem      -->
-    <img src="{% static "images/Hexagrama.jpg" %}" alt="images/"/>
-   
 
     <footer>
         <p>© 2024 Minha Aplicação</p>

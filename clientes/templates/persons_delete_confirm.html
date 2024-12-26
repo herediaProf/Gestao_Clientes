@@ -1,3 +1,4 @@
+    {% load bootstrap %}
 <!DOCTYPE html>
 <html lang="pt_Br">
     {% load static %}
@@ -15,14 +16,31 @@
     </header>
 
     <main>
-        <p>Esta é uma página de exemplo em Django com cores azul e laranja.</p>
-        <button id="actionButton">Clique Aqui</button> 
-        <br>       
-        <h1> Tem Certeza  que  deseja  deletar a  {{ person.first_name }}?</h1> 
-                  
-        <form method="POST" enctype="multipart/form-data">
+         {{ form|bootstrap }}        
+        <form method="POST" enctype="multipart/form-data">            
+
+            # or use with individual field
+            {{ form.<field name>|bootstrap }} - To output individual fields
+
+            # For horizontal forms
+            {{ form|bootstrap_horizontal }}
+
+            # Or with custom size (default is 'col-lg-2 col-sm-2')
+            {{ form|bootstrap_horizontal:'col-lg-4' }}
+      
             {% csrf_token %}             
-            <button type="submit">Delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
          
     </main>
+       <br>
+        <!-- - colocando imagem      -->
+        <img src="{% static "images/Hexagrama.jpg" %}" alt="images/"/>
+    
+
+    <footer>
+        <p>© 2024 Minha Aplicação</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

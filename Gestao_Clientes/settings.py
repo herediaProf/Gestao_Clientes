@@ -33,7 +33,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 #ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com', '127.0.0.1']
 
 
-ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com']
+ALLOWED_HOSTS = ['gestao-clientes-dea2ee4d4c19.herokuapp.com', '127.0.0.1']
 
 
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "bootstrapform",
     "clientes",
     "home",
 ]

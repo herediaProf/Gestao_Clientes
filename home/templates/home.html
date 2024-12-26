@@ -10,14 +10,27 @@
 <script src="{% static 'js/scripts.js' %}"></script>
 
     <title>Projeto Automação & Robótica</title>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            Column
+            </div>
+            <div class="col">
+            <h1> Seja  Bem  Vindo! </h1>
+            </div>
+            <div class="col">
+                {% if user.is_authenticated %}
+                    <p> Olá {{ user.username }} </p>
+                    <a href=" {% url 'logout' %}">sair</a>
+                {% else%}
+                    <a href="{% url 'login' %}">Entrar</a>
+                {% endif %}    
+            </div>
+        </div>
+    </div>
  
-{% if user.is_authenticated %}
-    <p> Olá {{ user.username }} </p>
-    <a href=" {% url 'logout' %}">sair</a>
-{% else%}
-    <a href="{% url 'login' %}">Entrar</a>
-{% endif %}
-    
+
 </head>
 <body>
     <header class="menu-flutuante">
